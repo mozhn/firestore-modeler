@@ -1,0 +1,5 @@
+<app-header></app-header>
+<div class="content">
+  <app-document (onSelect)="onSelectDocument($event)" [document]="testData"></app-document>
+</div>
+<app-right-panel (onClose)="closeRightPanel()" [ngClass]="{'show-panel': showRightPanel}"></app-right-panel>
