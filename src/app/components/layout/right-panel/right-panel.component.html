@@ -8,4 +8,24 @@
 <div class="panel-body">
   <h2 class="input-title">Document Path</h2>
   <input type="text" class="custom-input" placeholder="/users/user/books/book">
+  <h2 class="input-title">Fields</h2>
+  <div class="fieldset" *ngFor="let field of fieldList">
+    <input [(ngModel)]="field.key" type="text" class="custom-input" placeholder="Field">
+    <select class="custom-input" [(ngModel)]="field.type">
+      <option value="none" disabled>type</option>
+      <option value="string">string</option>
+      <option value="number">number</option>
+      <option value="boolean">boolean</option>
+      <option value="map">map</option>
+      <option value="array">array</option>
+      <option value="null">null</option>
+      <option value="timestamp">timestamp</option>
+      <option value="geopoint">geopoint</option>
+      <option value="reference">reference</option>
+    </select>
+  </div>
+  <button class="default-button add-field-button" (click)="addField()">
+    <img src="assets/icons/button-plus.svg" alt="Add field">
+    Add Field
+  </button>
 </div>
